@@ -95,6 +95,10 @@ public class BigDataTest {
 		}
 	}
 
+	/**
+	 *  split input and write in output my custom key KeySolverTime(composed by solver and time)  
+	 *	and use as value the time
+	 */
 	public static class Mapper1 extends Mapper<LongWritable, Text, KeySolverTime, Text> {
 		@Override
 		protected void map(LongWritable key, Text value,
@@ -109,6 +113,10 @@ public class BigDataTest {
 		}
 	}
 
+	/**
+	 * Sort for time and group for solver name. 
+	 * The resolver write in output solver and the list of its times 
+	 */
 	public static class Reducer1 extends Reducer<KeySolverTime, Text, Text, Text> {
 
 		@Override
@@ -122,6 +130,10 @@ public class BigDataTest {
 		}
 	}
 
+	/**
+	 * Read the output of previous Reducer and split input and add an index to each time.
+	 * Write in output index -> solver,time
+	 */
 	public static class Mapper2 extends Mapper<LongWritable, Text, IntWritable, Text> {
 
 		@Override
@@ -136,6 +148,12 @@ public class BigDataTest {
 		}
 	}
 
+	/**
+	 * Data are grouping for index 
+	 * ex: 0 -> solver1 t_solver1 solver2 t_solver2 ...
+	 * 	   1 -> solver2 t_solver2 solver1 t_solver1 ...
+	 * Fixed an order of the solvers for print, we can create a csv file for the output 
+	 */
 	public static class Reducer2 extends Reducer<IntWritable, Text, NullWritable, Text> {
 		private boolean firstit = true;
 		private Map<String, String> solverMap = new HashMap<>();
