@@ -13,4 +13,4 @@ N		| Solver1 |	Solver2 |
 
 **NOTE:** you can run the ant script called "build.xml" for run the project
 
-**NOTE_2:** the output of "exercise 1" is in the folder BigDataTest_o/1
+**NOTE_2:** the output of "exercise 1" is in the folder result/BigDataTest_o/1
