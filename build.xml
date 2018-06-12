@@ -2,7 +2,7 @@
 <project name="WordCount" default="all" basedir=".">
 	<property name="build" value="bin" />
 	<property name="projectName" value="${ant.project.name}" />
-	<property name ="className" value="BigDataTest"/>
+	<property name ="className" value="BigDataTest_Ex1"/>
 
 	<target name="all" depends="check, deldir,jar,ex"/>
 

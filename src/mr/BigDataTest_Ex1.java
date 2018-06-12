@@ -21,7 +21,7 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-public class BigDataTest {
+public class BigDataTest_Ex1 {
 
 	public static class KeySolverTime implements WritableComparable<KeySolverTime> {
 		String solver;
